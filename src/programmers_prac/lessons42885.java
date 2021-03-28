@@ -1,57 +1,64 @@
 //탐욕법 > 구명보트
 package programmers_prac;
 
-import java.util.Collections;
+//탐욕법 > 구명보트
+import java.util.Arrays;
 import java.util.LinkedList;
 
 public class lessons42885 {
-	 public int solution(int[] people, int limit) {
-	        int answer = 0;
+	public static int solution(int[] people, int limit) {
+		int answer = 0;
 
-	        //우선순위큐에 people배열 삽입
-	        LinkedList<Integer> weightOfOne = new LinkedList<Integer>();
+		//오름차순정렬
+		Arrays.sort(people);
+
+		// 리스트에 people배열 삽입
+		LinkedList<Integer> weightOfOne = new LinkedList<Integer>();
 
 
-	        for(int weight : people) {
-	        	weightOfOne.add(weight);
-	        }
-	        Collections.sort(weightOfOne);
+		for (int weight : people) {
+			weightOfOne.add(weight);
+		}
 
-	        //무인도에 남는 사람이 없을때까지 반복
-	        while(weightOfOne.size() > 0) {
-	        	 //탈출하지 못한 사람들 중 한명
-		        int lowest = weightOfOne.poll();
 
-		        //가장 작은 사람이 limit의 절반을 초과할경우
-		        if(lowest  > limit / 2) {
-		        	answer++;
-		        	break;
-		        }
-		        //두 사람의 몸무게를 합쳤을 때 한계치에 가장 타이트한 사람 찾기
-		        int next = 0;
+		// 무인도에 남는 사람이 없을때까지 반복
+		while (weightOfOne.size() > 0) {
+			answer++;
 
-		        //두 사람의 몸무게의 합
-		        int sum = lowest;
-		        for(int nextOne : weightOfOne) {
-		        	//두 사람의 몸무게의 합이 한도치 이내이고, limit에 가장 타이트한 값이라면
-		        	if(lowest + nextOne <= limit && lowest + nextOne > sum) {
-		        		sum = lowest + nextOne;
-		        		next = nextOne;
-		        	}
-		        }
+			// 남은사람 중 가장 무거운 사람
+			int heavy = weightOfOne.pollLast();
+			/*
+			int heavy = weightOfOne.get(weightOfOne.size()-1);
+			weightOfOne.remove(weightOfOne.size()-1);
+			 */
 
-		        //더해지는 사람이 있을 수 잇는 경우
-		        if(weightOfOne.size()>0 && next != 0)
-		        	weightOfOne.remove(weightOfOne.indexOf(next));
+			// 가장 가벼운 사람과 무거운 사람의 몸무게 합
+			int sum = heavy;
 
-		        answer++;
-	        }
-	        answer += weightOfOne.size();
-	        return answer;
-	    }
+			// 남은사람이 남아있는 경우
+			if (weightOfOne.size() > 0) {
+				// 남은사람 중 가장 가벼운 사람
+				int light = weightOfOne.get(0);
+				sum = heavy + light;
+			}
+
+			// 합이 한계보다 적으면 같은배에 태우기
+			if (sum <= limit && weightOfOne.size()>0) {
+				weightOfOne.remove(0);
+			}
+
+			// 가장 무거운 사람이 제한무게의 절반이하인 경우
+			if (heavy <= limit / 2.0) {
+				break;
+			}
+		}
+		answer += Math.ceil(weightOfOne.size() / 2.0);
+		return answer;
+	}
+
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		int [] arr = {7,8,5};
+		solution(arr, 10);
 	}
 
 }
