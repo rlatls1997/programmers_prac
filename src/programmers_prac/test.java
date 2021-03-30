@@ -1,12 +1,12 @@
 package programmers_prac;
 
-import java.util.StringTokenizer;
-
 public class test {
 
 	public static void main(String[] args) {
-		String p = "abcde";
-		StringBuilder sb = new StringBuilder
+		StringBuilder sb = new StringBuilder("aa");
+		sb.delete(0, 1);
+
+		System.out.println(sb.charAt(0));
 	}
 
 }
