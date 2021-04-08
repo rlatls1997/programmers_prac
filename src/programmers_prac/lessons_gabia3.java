@@ -49,18 +49,15 @@ public class lessons_gabia3 {
 
 		// 커피추출구가 2개 이상인 경우
 		int index = 0;
-		int size = 0;
 		while (index < answer.length) {
 
 			while (coffeeMachine.size() <= N - 1) {
 				coffeeMachine.addFirst(al.poll());
-				size++;
 			}
-			System.out.println(coffeeMachine.size());
 			// 만들어지기까지의 시간 1씩 깎기
-			for (int i = 0; i < size; i++) {
-				if (coffeeMachine.get(i) != null) {
-					coffeeMachine.get(i).setTimeMinusOne();
+			for (Node a : coffeeMachine) {
+				if (a != null) {
+					a.setTimeMinusOne();
 				}
 			}
 
@@ -71,7 +68,7 @@ public class lessons_gabia3 {
 					if (coffeeMachine.get(check).getTime() == 0) {
 						answer[index] = coffeeMachine.get(check).getId();
 						coffeeMachine.remove(check);
-						size--;
+
 						index++;
 					}
 				}
@@ -85,7 +82,7 @@ public class lessons_gabia3 {
 	}
 
 	public static void main(String[] args) {
-		int[] arr = { 4,2,2,5,3};
+		int[] arr = { 4, 2, 2, 5, 3};
 		solution(3, arr);
 	}
 
