@@ -20,20 +20,25 @@ public class lessons62048 {
 		// 가로, 세로가 다른경우
 		double x = 0;
 		double y = 1;
+
+		//y-1일 때의 x좌표
 		double preX = 0;
+
+		// 사용 불가능한 박스의 총 개수
 		long sum = 0;
 
 		while (y <= h) {
 			preX = x;
 			x = (w * y) / h;
 
-			//y-1 ~ y 범위내에서 사용 불가능한 박스의 개수
+			// y-1 ~ y 범위내에서 사용 불가능한 박스의 개수
 			sum += Math.ceil(x) - Math.floor(preX);
 			y++;
 		}
-		answer = (long)w * (long)h - sum;
+		answer = (long) w * (long) h - sum;
 		return answer;
 	}
+
 	public static void main(String[] args) {
 		System.out.println(solution(12, 12));
 
