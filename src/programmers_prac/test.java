@@ -16,7 +16,8 @@ public class test {
 	public static void main(String[] args) {
 		StringBuilder sb = new StringBuilder("aa");
 		HashSet<Node> hs = new HashSet<Node>();
-
+		char f = 'Z';
+		System.out.println((int)f);
 
 		Node b = new Node(1,2);
 		Node a = new Node(1,2);
