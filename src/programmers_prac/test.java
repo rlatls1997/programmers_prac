@@ -19,6 +19,8 @@ public class test {
 		char f = 'Z';
 		System.out.println((int)f);
 
+		int ab = Integer.parseInt("011");
+		System.out.println(ab);
 		Node b = new Node(1,2);
 		Node a = new Node(1,2);
 		hs.add(a);
