@@ -1,6 +1,7 @@
 package programmers_prac;
 
-import java.util.HashSet;
+import java.util.Arrays;
+import java.util.LinkedList;
 
 public class test {
 
@@ -14,23 +15,21 @@ public class test {
 		}
 	}
 	public static void main(String[] args) {
-		StringBuilder sb = new StringBuilder("aa");
-		HashSet<Node> hs = new HashSet<Node>();
-		char f = 'Z';
-		System.out.println((int)f);
+		LinkedList<String> a = new LinkedList<String>();
+		a.add("aaa");
+		a.add("dfa");
+		char [] ar = {'a', 'h', 'a', 'w','e','d','c'};
+		Arrays.sort(ar);
+		String temp = "";
+		for(char e : ar) {
+			temp += e;
+		}
+		System.out.println(ar[100]);
+		String [] b = a.toArray(new String[a.size()]);
 
-		int ab = Integer.parseInt("011");
-		System.out.println(ab);
-		Node b = new Node(1,2);
-		Node a = new Node(1,2);
-		hs.add(a);
-		hs.add(b);
-		for(Node c : hs)
-		System.out.println(5+""+-5);
-
-		sb.delete(0, 1);
-
-		char [] arr = {'*', '+', '-'};
+		for(String c : b) {
+			System.out.println(c);
+		}
 
 	}
 	 static void comb(int[] arr, boolean[] visited, int depth, int n, int r) {
