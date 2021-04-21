@@ -21,6 +21,8 @@ public class test {
 		char [] ar = {'a', 'h', 'a', 'w','e','d','c'};
 		Arrays.sort(ar);
 		String temp = "";
+		String qw = "(5+5)*10";
+		System.out.println(Integer.parseInt(qw));
 		for(char e : ar) {
 			temp += e;
 		}
