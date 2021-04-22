@@ -1,7 +1,9 @@
 package programmers_prac;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.Set;
 
 public class test {
 
@@ -20,6 +22,10 @@ public class test {
 		a.add("dfa");
 		char [] ar = {'a', 'h', 'a', 'w','e','d','c'};
 		Arrays.sort(ar);
+		int [] arr12 = new int[3];
+		System.out.println(arr12[2]+"1");
+		Set<Integer> [] hs = new Set[8];
+		ArrayList<Integer> [] ae = new ArrayList[8];
 		String temp = "";
 		String qw = "(5+5)*10";
 		System.out.println(Integer.parseInt(qw));
