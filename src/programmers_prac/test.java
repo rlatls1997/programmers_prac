@@ -2,8 +2,6 @@ package programmers_prac;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Set;
 
 public class test {
 
@@ -17,27 +15,18 @@ public class test {
 		}
 	}
 	public static void main(String[] args) {
-		LinkedList<String> a = new LinkedList<String>();
-		a.add("aaa");
-		a.add("dfa");
-		char [] ar = {'a', 'h', 'a', 'w','e','d','c'};
-		Arrays.sort(ar);
-		int [] arr12 = new int[3];
-		System.out.println(arr12[2]+"1");
-		Set<Integer> [] hs = new Set[8];
-		ArrayList<Integer> [] ae = new ArrayList[8];
-		String temp = "";
-		String qw = "(5+5)*10";
-		System.out.println(Integer.parseInt(qw));
-		for(char e : ar) {
-			temp += e;
-		}
-		System.out.println(ar[100]);
-		String [] b = a.toArray(new String[a.size()]);
+		ArrayList<String []> b = new ArrayList<String []>();
 
-		for(String c : b) {
-			System.out.println(c);
+		String [] query = {"java backend junior pizza 150","python frontend senior chicken 210","python frontend senior chicken 150","cpp backend senior pizza 260","java backend junior chicken 80","python backend senior chicken 50"};
+
+		Arrays.sort(query);
+		for(String a : query) {
+			System.out.println(a);
 		}
+
+		String nextToken = "260";
+		int score = Integer.parseInt("200");
+		System.out.println(Integer.parseInt(nextToken) < score);
 
 	}
 	 static void comb(int[] arr, boolean[] visited, int depth, int n, int r) {

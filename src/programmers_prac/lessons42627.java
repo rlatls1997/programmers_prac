@@ -34,7 +34,7 @@ public class lessons42627 {
 			boolean canWork = false;
 			// 하드디스크가 작업을 수행하고 있지 않을 때
 			if (!working) {
-				int requestedTime = nowTime + 1;
+				int requestedTime = Integer.MAX_VALUE;
 				int minimumInsertedTimeJobIndex = 0;
 				for (int[] job : ll) {
 					// 요청 시각이 현재 시각 이하인 경우
