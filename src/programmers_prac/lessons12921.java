@@ -1,5 +1,5 @@
+package programmers_prac;
 //연습문제 > 소수찾기
-package programmers_prac.didntCompelete;
 
 public class lessons12921 {
 	public static int solution(int n) {
@@ -9,14 +9,12 @@ public class lessons12921 {
 			boolean value = true;
 
 			for(int j = 2; j<=Math.sqrt(i); j++) {
-				System.out.println(i+", "+j);
 				if(i%j == 0) {
 					value = false;
 					break;
 				}
 			}
 			if(value) {
-				System.out.println(i);
 				answer++;
 			}
 		}
