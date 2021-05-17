@@ -1,6 +1,6 @@
-//연습문제 > 같은 숫자는 싫어
-package didntCompelete;
+package programmers_prac;
 
+//연습문제 > 같은 숫자는 싫어
 import java.util.ArrayList;
 
 public class lessons12906 {
