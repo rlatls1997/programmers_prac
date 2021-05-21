@@ -1,5 +1,5 @@
 //2021 KAKAO BLIND RECRUITMENT > 순위검색
-package didntCompelete;
+package programmers_prac;
 
 import java.util.ArrayList;
 import java.util.Collections;
