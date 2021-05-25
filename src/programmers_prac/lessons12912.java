@@ -6,6 +6,5 @@ public class lessons12912 {
     }
 
     public static void main(String[] args) {
-
     }
 }
