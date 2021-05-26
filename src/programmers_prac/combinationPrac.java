@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class combinationPrac {
-	public static <E> void combination(char [] arr, LinkedList<E> ll,  ) {
+	public static <E> void combination(char [] arr, LinkedList<E> ll) {
 
 	}
 	public static void main(String[] args) {
@@ -13,8 +13,6 @@ public class combinationPrac {
 		LinkedList<ArrayList<Character>> ll = new LinkedList<ArrayList<Character>>();
 
 		char [] arr = {'*', '-', '+'};
-
-
 
 	}
 
