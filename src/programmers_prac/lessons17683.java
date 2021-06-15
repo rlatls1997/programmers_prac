@@ -76,9 +76,6 @@ public class lessons17683 {
                 rest++;
             }
         }
-        if (melody.charAt(rest) == '#') {
-            totalMelody += '#';
-        }
         return totalMelody;
     }
 
