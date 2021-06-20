@@ -60,7 +60,6 @@ public class lessons72414 {
         return times[0] + ":" + times[1] + ":" + times[2];
     }
 
-
     public static void main(String[] args) {
         String[] arr = {"69:59:59-89:59:59", "01:00:00-21:00:00", "79:59:59-99:59:59", "11:00:00-31:00:00"};
         solution("99:59:59", "25:00:00", arr);
