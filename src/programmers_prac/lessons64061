@@ -1,0 +1,28 @@
+function solution(board, moves) {
+    var answer = 0;
+
+    let stack = [];
+    for (let i = 0; i < moves.length; i++) {
+        let depth = 0;
+        while (depth < board.length) {
+            if (board[depth][moves[i] - 1] !== 0) {
+                let doll = board[depth][moves[i] - 1];
+                board[depth][moves[i] - 1] = 0;
+
+                if (stack.length === 0) {
+                    stack.push(doll);
+                } else {
+                    if (stack[stack.length - 1] === doll) {
+                        stack.pop();
+                        answer += 2;
+                    } else {
+                        stack.push(doll);
+                    }
+                }
+                break;
+            }
+            depth++;
+        }
+    }
+    return answer;
+}
