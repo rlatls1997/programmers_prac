@@ -24,7 +24,7 @@ public class lessons84021 {
     public static boolean putPieceIntoBoard(List<int[]> piece, int[][] board) {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[i].length; j++) {
-                if (isRetractable(piece, board, i, j) &&
+                if (isInsertable(piece, board, i, j) &&
                         isTightToBlank(piece, board, i, j)) {
                     setBoardWithNewPiece(piece, board, i, j);
                     return true;
@@ -42,11 +42,10 @@ public class lessons84021 {
         }
     }
 
-    public static boolean isRetractable(List<int[]> piece, int[][] board, int i, int j) {
+    public static boolean isInsertable(List<int[]> piece, int[][] board, int i, int j) {
         for (int[] pieceInfo : piece) {
             int relativeX = i + pieceInfo[0];
             int relativeY = j + pieceInfo[1];
-
             if (relativeX < 0 || relativeX >= board.length
                     || relativeY < 0 || relativeY >= board.length) {
                 return false;
@@ -78,7 +77,6 @@ public class lessons84021 {
                 int sideX = relativeX + side[0];
                 int sideY = relativeY + side[1];
                 String positionSetStr = sideX + ", " + sideY;
-
                 if (!positionSet.contains(positionSetStr) &&
                         isBlankElement(board, sideX, sideY)) {
                     isTight = false;
@@ -129,7 +127,6 @@ public class lessons84021 {
 
     public static List<int[]> getPieceInfo(int[][] table) {
         List<int[]> pieceInfo = new ArrayList<>();
-
         for (int i = 0; i < table.length; i++) {
             for (int j = 0; j < table[i].length; j++) {
                 if (table[i][j] == 1) {
