@@ -1,4 +1,4 @@
-package baekjoon_prac;
+package programmers_prac;
 
 import java.util.ArrayList;
 import java.util.List;
